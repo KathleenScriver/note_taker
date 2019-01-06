@@ -5,7 +5,7 @@ export default class NoteList extends Component {
     return (
       <div className="note-list">
         <div className="new-note">
-          <form>
+          <form onSubmit={this.props.addItem}>
             <input type='textarea' />
             <button type='submit'>Add Note</button>
           </form>
