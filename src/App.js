@@ -1,20 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
-import NoteList from './NoteList.js'
+import Notes from './Notes'
 
 class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      notes: []
-    }
-  }
-
-
   render() {
     return (
       <div className="App">
-        <NoteList />
+        <Notes />
       </div>
     )
   }
