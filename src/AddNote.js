@@ -6,7 +6,7 @@ export default class AddNote extends Component {
     super(props);
     this.state = {
       noteText: '',
-      noteTag: ''
+      noteTag: '',
     }
   }
 
