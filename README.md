@@ -1,68 +1,79 @@
+#NoteTaker
+
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/KathleenYruegas/note_taker.svg?columns=all)](https://waffle.io/KathleenYruegas/note_taker)
+
+## Purpose
+
+The objective of this code challenge was to create a simple note taking app using Node.js endpoints hosted on AWS API Gateway, while utilizing AWS Lambdas to connect to the AWS DynamoDB. 
+
+### Expected Functionality:
+  - Allow input of new Note Item, max of 250 characters, with dropdown menu of tags: work, personal, and hobby.
+  - View all previously created Note Items.
+  - Ability to filter items by tag and by date.
+
+### Technology
+  **Front End**
+  - React
+  - ES6
+
+  **Back End**
+  - AWS API Gateway
+  - AWS Lambda
+  - AWS DynamoDB
+
+### Cloning
+
+  * `git clone https://github.com/KathleenYruegas/note_taker.git` into your desired local directory
+  * `npm install`
+  * `yarn start` (app will be hosted locally on localhost:3000)
+
+### Reflection of Work
+
+Working with React for the first time was very challenging, interesting, and rewarding. 
+
+This was my first time accessing AWS and playing around with the tools they offer.  Through the provided tutorials and my own AWS documentation reading, I was able to implement the AWS API Gateway, Lambda functions, and DynamoDB on my back end. This was definitely challenging, but AWS is well documented and there are plenty of resources to comb through.
+
+For the tag-filter, I decided to do this on the back end to push more of the computational logic to the database as opposed to doing it on the client browser. This was achieved by performing different queries on DynamoDB via the lambda function.
+
+On the front end, I went with a fairly simple layout and used JQuery to easily manipulate the DOM.
+
+**Known Issues**
+
+Currently, the sort by date functionality puts the items in order from least to most recent. In future iterations, I'd rather this be a sort option where no matter which filter you're on (tag), you can have the option to then sort by date.
+
+The lambda code in this repo was copied and pasted from my AWS Lambda Console and is for display purposes only.
+
+### Live App Usage
+
+![](link)
+
+
+### AWS Services Used
+
+Since I cannot provide you access to my AWS account, I have included screenshots showing the DynamoDB Console, API Gateway Console, and Lambda pages I used.
+
+
+**DynamoDB Console**
+
+<img src='assets/DynamoDB Console.png'>
+
+
+**API Gateway Console**
+
+<img src='assets/API Gateway Console.png'>
+
+
+**Lambda Console**
+
+<img src='assets/LambdaConsole.png'>
+
+<img src='assets/getLambda.png'>
+
+<img src='assets/addLambda.png'>
+
+
+
+### Other Information
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
