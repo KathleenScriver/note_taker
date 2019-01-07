@@ -39,6 +39,7 @@ export default class NoteList extends Component {
           key={note.todoDescription}
           text={note.todoDescription}
           tag={note.tag}
+          createdOn={note.created}
           removeNote={this.removeNote}
         />
       ))
