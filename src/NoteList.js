@@ -9,6 +9,7 @@ export default class NoteList extends Component {
     this.state = {
       isLoading: false,
       notes: [],
+      error: false
     };
   }
 
@@ -46,9 +47,31 @@ export default class NoteList extends Component {
     )
   }
 
-  addNote = (newNoteText, newNoteTag) => {
-    const newNote = { text: newNoteText, tag: newNoteTag }
-    this.setState({ notes: [...this.state.notes, newNote] });
+  addNote =  async (newNoteText, newNoteTag) => {
+    const newNote = { todoDescription: newNoteText, tag: newNoteTag, created: new Date() }
+
+    try {
+      const response = await fetch('https://cq31v4skne.execute-api.us-east-2.amazonaws.com/beta/todos', {
+        method: 'POST',
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(newNote)
+      })
+      if( response.status === 200 ){
+        this.setState({
+          notes: [...this.state.notes, newNote],
+          error: false
+        })
+        console.log(this.state.notes)
+      } else {
+        throw Error
+      }
+
+    } catch (error) {
+      console.log(error.message)
+      this.setState({
+        error: true
+      })
+    }
   }
 
   removeNote = (removedNote) => {

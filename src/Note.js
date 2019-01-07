@@ -6,11 +6,6 @@ export default class Note extends Component {
     this.props.removeNote(this.props.text);
   }
 
-  // displayDateCreated = () => {
-  //   const date = new Date(this.props.created)
-  //   return `${date.getMonth() + 1}/${date.getDate()}`
-  // }
-
   render() {
     const date = new Date(this.props.createdOn)
 
