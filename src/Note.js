@@ -10,7 +10,7 @@ export default class Note extends Component {
     return (
       <div className='note'>
         {this.props.name}
-        <button onClick={this.removeNote}>X</button>
+        <button className='remove' onClick={this.removeNote}>X</button>
       </div>
     )
   }

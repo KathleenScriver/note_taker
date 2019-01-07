@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoteList renders and matches our snapshot 1`] = `
+<div
+  className="main-note-display"
+>
+  <div
+    className="add-note"
+  >
+    <h1>
+      Add a Note
+    </h1>
+    <textarea
+      max="250"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <button
+      onClick={[Function]}
+    >
+      Add Note
+    </button>
+  </div>
+  <div
+    className="note-list"
+  >
+    <h1>
+      Notes
+    </h1>
+    <div
+      className="note"
+    >
+      Get groceries
+      <button
+        className="remove"
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </div>
+    <div
+      className="note"
+    >
+      Finish project
+      <button
+        className="remove"
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </div>
+  </div>
+</div>
+`;
