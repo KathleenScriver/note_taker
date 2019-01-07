@@ -19,10 +19,10 @@ exports[`NoteList renders and matches our snapshot 1`] = `
     <select
       className="tag-list"
       onChange={[Function]}
+      required={true}
     >
       <option
         default={true}
-        required={true}
         value=""
       >
         Select Tag
