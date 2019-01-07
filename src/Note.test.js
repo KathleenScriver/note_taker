@@ -15,11 +15,16 @@ describe(Note, () => {
     const component = renderer.create(
       <Note name='Get Groceries'/>
     );
-    const tree = componenet.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   })
 
   it('contains the supplied name', () => {
     expect(component.text()).toContain(name)
+  })
+
+  it('calls passed in removeNote function when remove button clicked', () => {
+    component.find('button.remove').simulate('click');
+    expect(mockRemoveNote).toBeCalled();
   })
 })
