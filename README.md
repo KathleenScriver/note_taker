@@ -4,7 +4,7 @@
 
 ## Purpose
 
-The objective of this code challenge was to create a simple note taking app using Node.js endpoints hosted on AWS API Gateway, while utilizing AWS Lambdas to connect to the AWS DynamoDB. 
+The objective of this code challenge was to create a simple note taking app using Node.js endpoints hosted on AWS API Gateway, while utilizing AWS Lambdas to connect to the AWS DynamoDB.
 
 ### Expected Functionality:
   - Allow input of new Note Item, max of 250 characters, with dropdown menu of tags: work, personal, and hobby.
@@ -21,6 +21,11 @@ The objective of this code challenge was to create a simple note taking app usin
   - AWS Lambda
   - AWS DynamoDB
 
+### Testing
+ This app is tested with `Enzyme` and `Jest`.
+ - To run testing:
+  - From root directory, `yarn test`
+
 ### Cloning
 
   * `git clone https://github.com/KathleenYruegas/note_taker.git` into your desired local directory
@@ -29,7 +34,7 @@ The objective of this code challenge was to create a simple note taking app usin
 
 ### Reflection of Work
 
-Working with React for the first time was very challenging, interesting, and rewarding. 
+Working with React for the first time was very challenging, interesting, and rewarding.
 
 This was my first time accessing AWS and playing around with the tools they offer.  Through the provided tutorials and my own AWS documentation reading, I was able to implement the AWS API Gateway, Lambda functions, and DynamoDB on my back end. This was definitely challenging, but AWS is well documented and there are plenty of resources to comb through.
 
@@ -76,4 +81,3 @@ Since I cannot provide you access to my AWS account, I have included screenshots
 ### Other Information
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
