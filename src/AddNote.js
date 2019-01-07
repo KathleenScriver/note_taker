@@ -37,8 +37,9 @@ export default class AddNote extends Component {
         <select
           className='tag-list'
           onChange={this.updateNoteTag}
+          required
         >
-          <option value='' default required>Select Tag</option>
+          <option value='' default>Select Tag</option>
           <option value='hobby'>Hobby</option>
           <option value='work'>Work</option>
           <option value='personal'>Personal</option>

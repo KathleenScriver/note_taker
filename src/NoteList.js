@@ -7,11 +7,15 @@ export default class NoteList extends Component {
   constructor(props) {
     super(props);
     this.state = {
+<<<<<<< HEAD
       notes: [
         { text: 'Get groceries', tag: 'personal' },
         { text: 'Finish project', tag: 'work' },
         { text: 'Kayak with kids', tag: 'hobby' }
       ]
+=======
+      notes: ['Get groceries', 'Finish project', 'Do Stuff']
+>>>>>>> 94d8fedc907bdc897f4d0f49baebed5222b870b6
     }
   }
 
