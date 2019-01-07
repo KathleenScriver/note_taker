@@ -3,14 +3,23 @@ import './NoteList.css';
 import Note from './Note'
 
 export default class NoteList extends Component {
-  // renderNotes = () => {
-  //   <Note name={"Get groceries."}/>
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      notes: ['Get groceries', 'Finish project']
+    }
+  }
+
+  renderNotes = () => {
+    return this.state.notes.map(note => (
+      <Note name={note} />
+    ));
+  }
 
   render() {
     return (
       <div className='note-list'>
-        <Note name="Get groceries." />
+        {this.renderNotes()}
       </div>
     )
   }
