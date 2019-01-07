@@ -26,7 +26,8 @@ export default class NoteList extends Component {
     ));
   }
 
-  addNote = (newNote) => {
+  addNote = (newNoteText, newNoteTag) => {
+    const newNote = { text: newNoteText, tag: newNoteTag }
     this.setState({ notes: [...this.state.notes, newNote] });
   }
 
