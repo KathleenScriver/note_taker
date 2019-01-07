@@ -39,7 +39,7 @@ describe(NoteList, () => {
 
   it('removes note when remove note function called', () => {
     const before = component.find(Note).length;
-    const removeThisOne = component.state('notes')[0];
+    const removeThisOne = component.state('notes')[0].text;
     component.instance().removeNote(removeThisOne);
     component.update();
     const after = component.find(Note).length;
