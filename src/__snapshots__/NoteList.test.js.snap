@@ -16,6 +16,33 @@ exports[`NoteList renders and matches our snapshot 1`] = `
       type="text"
       value=""
     />
+    <select
+      className="tag-list"
+      onChange={[Function]}
+    >
+      <option
+        default={true}
+        required={true}
+        value=""
+      >
+        Select Tag
+      </option>
+      <option
+        value="hobby"
+      >
+        Hobby
+      </option>
+      <option
+        value="work"
+      >
+        Work
+      </option>
+      <option
+        value="personal"
+      >
+        Personal
+      </option>
+    </select>
     <button
       onClick={[Function]}
     >
@@ -31,7 +58,11 @@ exports[`NoteList renders and matches our snapshot 1`] = `
     <div
       className="note"
     >
-      Get groceries
+      <p>
+        Get groceries
+         || 
+        personal
+      </p>
       <button
         className="remove"
         onClick={[Function]}
@@ -42,7 +73,26 @@ exports[`NoteList renders and matches our snapshot 1`] = `
     <div
       className="note"
     >
-      Finish project
+      <p>
+        Finish project
+         || 
+        work
+      </p>
+      <button
+        className="remove"
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </div>
+    <div
+      className="note"
+    >
+      <p>
+        Kayak with kids
+         || 
+        hobby
+      </p>
       <button
         className="remove"
         onClick={[Function]}

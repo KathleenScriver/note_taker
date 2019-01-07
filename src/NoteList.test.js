@@ -31,7 +31,7 @@ describe(NoteList, () => {
 
   it('adds note when add note function called', () => {
     const before = component.find(Note).length;
-    component.instance().addNote('Test');
+    component.instance().addNote('Test', 'personal');
     component.update();
     const after = component.find(Note).length;
     expect(after).toBeGreaterThan(before);

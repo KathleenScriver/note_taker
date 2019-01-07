@@ -4,7 +4,11 @@ exports[`Note renders and matches our snapshot 1`] = `
 <div
   className="note"
 >
-  Get Groceries
+  <p>
+    Get Groceries
+     || 
+    personal
+  </p>
   <button
     className="remove"
     onClick={[Function]}

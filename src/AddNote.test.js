@@ -21,6 +21,7 @@ describe(AddNote, () => {
   it('contains input form', () => {
     expect(component.find('textarea')).toHaveLength(1);
     expect(component.find('button')).toHaveLength(1);
+    expect(component.find('select')).toHaveLength(1);
   })
 
   it('calls passed in addNote function when add button clicked', () => {
@@ -30,13 +31,13 @@ describe(AddNote, () => {
 
   it('updates form when keys are pressed', () => {
     const updateKey = 'test';
-    component.instance().updateNote({ target: { value: updateKey } })
+    component.instance().updateNoteText({ target: { value: updateKey } })
     expect(component.state('noteText')).toEqual(updateKey);
   });
 
   it('blanks out the noteText when the button is clicked', () => {
     const updateKey = 'test';
-    component.instance().updateNote({ target: { value: updateKey }});
+    component.instance().updateNoteText({ target: { value: updateKey }});
     expect(component.state('noteText')).toEqual(updateKey);
     component.find('button').simulate('click');
     expect(component.state('noteText')).toHaveLength(0);
