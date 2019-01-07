@@ -55,51 +55,9 @@ exports[`NoteList renders and matches our snapshot 1`] = `
     <h1>
       Notes
     </h1>
-    <div
-      className="note"
-    >
-      <p>
-        Get groceries
-         || 
-        personal
-      </p>
-      <button
-        className="remove"
-        onClick={[Function]}
-      >
-        X
-      </button>
-    </div>
-    <div
-      className="note"
-    >
-      <p>
-        Finish project
-         || 
-        work
-      </p>
-      <button
-        className="remove"
-        onClick={[Function]}
-      >
-        X
-      </button>
-    </div>
-    <div
-      className="note"
-    >
-      <p>
-        Kayak with kids
-         || 
-        hobby
-      </p>
-      <button
-        className="remove"
-        onClick={[Function]}
-      >
-        X
-      </button>
-    </div>
+    <p>
+      "Loading..."
+    </p>
   </div>
 </div>
 `;

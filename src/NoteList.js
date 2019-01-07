@@ -51,7 +51,8 @@ export default class NoteList extends Component {
   }
 
   removeNote = (removedNote) => {
-    const updatedNotes = this.state.notes.filter(note => (
+    const { notes } = this.state
+    const updatedNotes = notes.filter(note => (
       note.text !== removedNote
     ))
     this.setState({ notes: updatedNotes })
