@@ -5,17 +5,23 @@ export default class AddNote extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      noteText: ''
+      noteText: '',
+      noteTag: ''
     }
   }
 
-  updateNote = (event) => {
+  updateNoteText = (event) => {
     this.setState({ noteText: event.target.value });
   }
 
+  updateNoteTag = (event) => {
+    this.setState({ noteTag: event.target.value })
+  }
+
   addNote = () => {
-    this.props.addNote(this.state.noteText);
+    this.props.addNote(this.state.noteText, this.state.noteTag);
     this.setState({ noteText: '' });
+    this.setState({ noteTag: '' });
   }
 
   render() {
@@ -25,9 +31,17 @@ export default class AddNote extends Component {
         <textarea
           type='text'
           max='250'
-          onChange={this.updateNote}
+          onChange={this.updateNoteText}
           value={this.state.noteText}
         />
+        <select
+          className='tag-list'
+          onChange={this.updateNoteTag}
+        >
+          <option value='hobby'>Hobby</option>
+          <option value='work'>Work</option>
+          <option value='personal'>Personal</option>
+        </select>
         <button onClick={this.addNote}>Add Note</button>
       </div>
     )
