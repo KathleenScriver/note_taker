@@ -7,7 +7,7 @@ export default class NoteList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      notes: ['Get groceries', 'Finish project']
+      notes: ['Get groceries', 'Finish project', 'Do Stuff']
     }
   }
 
