@@ -6,7 +6,8 @@ exports[`Note renders and matches our snapshot 1`] = `
 >
   <p>
     Get Groceries
-     || 
+  </p>
+  <p>
     personal
   </p>
   <button

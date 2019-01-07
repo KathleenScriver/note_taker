@@ -7,23 +7,42 @@ export default class NoteList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      notes: [
-        { text: 'Get groceries', tag: 'personal' },
-        { text: 'Finish project', tag: 'work' },
-        { text: 'Kayak with kids', tag: 'hobby' }
-      ]
+      isLoading: false,
+      notes: [],
+    };
+  }
+
+  componentDidMount = async () => {
+    this.setState({ isLoading: true })
+    try {
+      const response = await fetch(`https://cq31v4skne.execute-api.us-east-2.amazonaws.com/beta/todos?searchValue=all`)
+      if (response.ok) {
+        const data = await response.json()
+        this.setState({ notes: data, isLoading: false })
+      } else {
+        throw new Error('Something went wrong, please try again.')
+      }
+    } catch (error) {
+      console.log(error.message)
     }
   }
 
   renderNotes = () => {
-    return this.state.notes.map(note => (
-      <Note
-        key={note.text}
-        text={note.text}
-        tag={note.tag}
-        removeNote={this.removeNote}
-      />
-    ));
+    const { notes } = this.state;
+    if (this.state.isLoading) {
+      return (<p>"Loading..."</p>)
+    }
+
+    return (
+      notes.map(note => (
+        <Note
+          key={note.todoDescription}
+          text={note.todoDescription}
+          tag={note.tag}
+          removeNote={this.removeNote}
+        />
+      ))
+    )
   }
 
   addNote = (newNoteText, newNoteTag) => {
@@ -32,7 +51,8 @@ export default class NoteList extends Component {
   }
 
   removeNote = (removedNote) => {
-    const updatedNotes = this.state.notes.filter(note => (
+    const { notes } = this.state
+    const updatedNotes = notes.filter(note => (
       note.text !== removedNote
     ))
     this.setState({ notes: updatedNotes })

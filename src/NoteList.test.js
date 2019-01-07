@@ -29,7 +29,7 @@ describe(NoteList, () => {
     expect(notesComponents).toEqual(notes);
   });
 
-  it('adds note when add note function called', () => {
+  xit('adds note when add note function called', () => {
     const before = component.find(Note).length;
     component.instance().addNote('Test', 'personal');
     component.update();
@@ -37,7 +37,7 @@ describe(NoteList, () => {
     expect(after).toBeGreaterThan(before);
   });
 
-  it('removes note when remove note function called', () => {
+  xit('removes note when remove note function called', () => {
     const before = component.find(Note).length;
     const removeThisOne = component.state('notes')[0].text;
     component.instance().removeNote(removeThisOne);
