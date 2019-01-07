@@ -19,7 +19,7 @@ export default class NoteList extends Component {
     return this.state.notes.map(note => (
       <Note
         key={note.text}
-        name={note.text}
+        text={note.text}
         tag={note.tag}
         removeNote={this.removeNote}
       />
@@ -33,7 +33,7 @@ export default class NoteList extends Component {
 
   removeNote = (removedNote) => {
     const updatedNotes = this.state.notes.filter(note => (
-      note !== removedNote
+      note.text !== removedNote
     ))
     this.setState({ notes: updatedNotes })
   }
