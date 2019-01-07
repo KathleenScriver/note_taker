@@ -7,21 +7,27 @@ export default class NoteList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      notes: ['Get groceries', 'Finish project']
+      notes: [
+        { text: 'Get groceries', tag: 'personal' },
+        { text: 'Finish project', tag: 'work' },
+        { text: 'Kayak with kids', tag: 'hobby' }
+      ]
     }
   }
 
   renderNotes = () => {
     return this.state.notes.map(note => (
       <Note
-        key={note}
-        name={note}
+        key={note.text}
+        name={note.text}
+        tag={note.tag}
         removeNote={this.removeNote}
       />
     ));
   }
 
-  addNote = (newNote) => {
+  addNote = (newNoteText, newNoteTag) => {
+    const newNote = { text: newNoteText, tag: newNoteTag }
     this.setState({ notes: [...this.state.notes, newNote] });
   }
 

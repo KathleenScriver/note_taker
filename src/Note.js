@@ -9,7 +9,7 @@ export default class Note extends Component {
   render() {
     return (
       <div className='note'>
-        {this.props.name}
+        <p>{this.props.name} || {this.props.tag}</p>
         <button className='remove' onClick={this.removeNote}>X</button>
       </div>
     )
