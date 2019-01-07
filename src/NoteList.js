@@ -16,12 +16,20 @@ export default class NoteList extends Component {
       <Note
         key={note}
         name={note}
+        removeNote={this.removeNote}
       />
     ));
   }
 
   addNote = (newNote) => {
     this.setState({ notes: [...this.state.notes, newNote] });
+  }
+
+  removeNote = (removedNote) => {
+    const updatedNotes = this.state.notes.filter(note => (
+      note !== removedNote
+    ))
+    this.setState({ notes: updatedNotes })
   }
 
   render() {
