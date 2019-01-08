@@ -3,6 +3,11 @@ import './TagFilter.css';
 
 
 export default class TagFilter extends Component {
+  filterNotes = (event) => {
+    const filterBy = event.target.value;
+    this.props.filterNotes(filterBy);
+  }
+
   render() {
     return (
       <div className="tag-filter">
