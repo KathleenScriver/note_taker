@@ -9,6 +9,7 @@ export default class NoteList extends Component {
     this.state = {
       isLoading: false,
       notes: [],
+      filteredNotes: [],
       error: false
     };
   }
@@ -29,7 +30,7 @@ export default class NoteList extends Component {
   }
 
   renderNotes = () => {
-    const { notes } = this.state;
+    const notes = (this.state.filteredNotes.length ? this.state.filteredNotes : this.state.notes);
     if (this.state.isLoading) {
       return (<p>"Loading..."</p>)
     }
