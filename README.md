@@ -4,14 +4,27 @@
 
 ## Purpose
 
-The objective of this code challenge was to create a simple note taking app using Node.js endpoints hosted on AWS API Gateway, while utilizing AWS Lambdas to connect to the AWS DynamoDB.
+The objective of this code challenge was to create a simple note taking app using Node.js endpoints hosted on AWS API Gateway, while utilizing AWS Lambdas to connect to the AWS DynamoDB. I went for a stretch goal of building the front end in React which is a new technology for me.
 
-### Expected Functionality:
-  - Allow input of new Note Item, max of 250 characters, with dropdown menu of tags: work, personal, and hobby.
-  - View all previously created Note Items.
-  - Ability to filter items by tag and by date.
+  * Expected Functionality:
+    - Allow input of new Note Item, max of 250 characters, with dropdown menu of tags: work, personal, and hobby.
+    - View all previously created Note Items.
+    - Ability to filter items by tag and by date.
 
-### Technology
+### Cloning
+
+* `git clone https://github.com/KathleenYruegas/note_taker.git` into your desired local directory
+* `npm install`
+* `yarn start` (app will be hosted locally on localhost:3000)
+
+
+### Testing
+This app is tested with `Enzyme` and `Jest`.
+- To run testing:
+- From root directory, `yarn test`
+
+
+### Technology Used
   **Front End**
   - React
   - ES6
@@ -21,30 +34,67 @@ The objective of this code challenge was to create a simple note taking app usin
   - AWS Lambda
   - AWS DynamoDB
 
-### Testing
- This app is tested with `Enzyme` and `Jest`.
- - To run testing:
-  - From root directory, `yarn test`
 
-### Cloning
+### API Endpoints (written on AWS API Gateway)
 
-  * `git clone https://github.com/KathleenYruegas/note_taker.git` into your desired local directory
-  * `npm install`
-  * `yarn start` (app will be hosted locally on localhost:3000)
+**GET `https://cq31v4skne.execute-api.us-east-2.amazonaws.com/beta/todos?searchValue=all`**
 
-### Reflection of Work
+  - This endpoint will return all of the note items in the database.
+  - Currently the `searchValue` query parameter must be set to `all`
 
-Working with React for the first time was very challenging, interesting, and rewarding.
+  **Example Response**
+```json
+[
+  {
+      "created": "2018-12-24T20:37:24.415Z",
+      "todoDescription": "Get new star map",
+      "tag": "hobby",
+      "id": "7c79a750-0a36-11e9-bcc2-0d0bf7a5a8bd"
+  },
+  {
+      "created": "2018-12-28T01:05:13.702Z",
+      "todoDescription": "Plan runs",
+      "tag": "hobby",
+      "id": "a1d97790-0a3c-11e9-a0ea-f767cfc23cfb"
+  },
+  {
+      "created": "2018-12-28T00:21:13.826Z",
+      "todoDescription": "Clean house",
+      "tag": "personal",
+      "id": "7c79a750-0a36-11e9-bcc2-0d0bf7a5a8bd"
+  }
+]
+```
 
-This was my first time accessing AWS and playing around with the tools they offer.  Through the provided tutorials and my own AWS documentation reading, I was able to implement the AWS API Gateway, Lambda functions, and DynamoDB on my back end. This was definitely challenging, but AWS is well documented and there are plenty of resources to comb through.
+**POST `https://cq31v4skne.execute-api.us-east-2.amazonaws.com/beta/todos?searchValue=all`**
 
-For the tag-filter, I decided to do this on the back end to push more of the computational logic to the database as opposed to doing it on the client browser. This was achieved by performing different queries on DynamoDB via the lambda function.
+  - This endpoint will allow you to add a new note to the database.
 
-On the front end, I went with a fairly simple layout and used JQuery to easily manipulate the DOM.
+  **Expected Request Format**
+```json
+{
+  /* Headers */
+  "Content-Type": "application/json"
+}
+{
+  /* Body */
+  "todoDescription": "New note info goes here",
+  "tag": "work",
+  "created": "Tues, Jan 5th"
+}
+```
+  * Note: The `created` attribute can be in any format.
+
+  **Example Response**
+
+  - A successful response will return `status code: 200`
+
+
+
 
 **Known Issues**
 
-Currently, the sort by date functionality puts the items in order from least to most recent. In future iterations, I'd rather this be a sort option where no matter which filter you're on (tag), you can have the option to then sort by date.
+
 
 The lambda code in this repo was copied and pasted from my AWS Lambda Console and is for display purposes only.
 
