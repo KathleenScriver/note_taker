@@ -10,6 +10,12 @@ exports[`Note renders and matches our snapshot 1`] = `
   <p>
     personal
   </p>
+  <p>
+    Created: 
+    NaN
+    /
+    NaN
+  </p>
   <button
     className="remove"
     onClick={[Function]}
