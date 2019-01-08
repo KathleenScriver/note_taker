@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './NoteList.css';
 import Note from './Note'
 import AddNote from './AddNote'
+import TagFilter from './TagFilter'
 
 export default class NoteList extends Component {
   constructor(props) {
@@ -89,8 +90,10 @@ export default class NoteList extends Component {
 
         <AddNote addNote={this.addNote}/>
 
+
         <div className='note-list'>
           <h1>Notes</h1>
+          <TagFilter />
           {this.renderNotes()}
         </div>
       </div>
