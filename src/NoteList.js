@@ -49,6 +49,18 @@ export default class NoteList extends Component {
     )
   }
 
+  filterNotes = (filterBy) => {
+    const { notes } = this.state
+    if (filterBy === "all") {
+      this.setState({ filteredNotes: [] })
+    } else {
+      const filteredNotes = notes.filter(note => (
+        note.tag === filterBy
+      ));
+      this.setState({ filteredNotes: [...filteredNotes] })
+    }
+  }
+
   addNote =  async (newNoteText, newNoteTag) => {
     const newNote = { todoDescription: newNoteText, tag: newNoteTag, created: new Date() }
 
@@ -93,7 +105,7 @@ export default class NoteList extends Component {
 
         <div className='note-list'>
           <h1>Notes</h1>
-          <TagFilter />
+          <TagFilter filterNotes={this.filterNotes}/>
           {this.renderNotes()}
         </div>
       </div>
