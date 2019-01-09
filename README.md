@@ -10,6 +10,9 @@ The objective of this code challenge was to create a simple note taking app usin
     - Allow input of new note, max of 250 characters, with dropdown menu of tags: work, personal, and hobby.
     - View all previously created notes.
     - Ability to filter items by tag and by date.
+ 
+Visit the deployed site here: https://kathleenyruegas.github.io/note_taker/
+ - Hosted on Github Pages.
 
 ### Cloning
 
