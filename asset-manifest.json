@@ -1,0 +1,13 @@
+{
+  "main.css": "/note_taker/static/css/main.c5e0cffe.chunk.css",
+  "main.js": "/note_taker/static/js/main.b2f78494.chunk.js",
+  "main.js.map": "/note_taker/static/js/main.b2f78494.chunk.js.map",
+  "static/js/1.1e3e2005.chunk.js": "/note_taker/static/js/1.1e3e2005.chunk.js",
+  "static/js/1.1e3e2005.chunk.js.map": "/note_taker/static/js/1.1e3e2005.chunk.js.map",
+  "runtime~main.js": "/note_taker/static/js/runtime~main.8bf2a2d2.js",
+  "runtime~main.js.map": "/note_taker/static/js/runtime~main.8bf2a2d2.js.map",
+  "static/css/main.c5e0cffe.chunk.css.map": "/note_taker/static/css/main.c5e0cffe.chunk.css.map",
+  "index.html": "/note_taker/index.html",
+  "precache-manifest.dd31b74756d42d28b181cfd50f83919a.js": "/note_taker/precache-manifest.dd31b74756d42d28b181cfd50f83919a.js",
+  "service-worker.js": "/note_taker/service-worker.js"
+}
