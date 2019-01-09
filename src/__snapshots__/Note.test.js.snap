@@ -4,11 +4,23 @@ exports[`Note renders and matches our snapshot 1`] = `
 <div
   className="note"
 >
-  <p>
+  <p
+    className="text"
+  >
     Get Groceries
   </p>
-  <p>
+  <p
+    className="tag"
+  >
     personal
+  </p>
+  <p
+    className="created"
+  >
+    Created: 
+    12
+    /
+    29
   </p>
   <button
     className="remove"

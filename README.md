@@ -7,8 +7,8 @@
 The objective of this code challenge was to create a simple note taking app using Node.js endpoints hosted on AWS API Gateway, while utilizing AWS Lambdas to connect to the AWS DynamoDB. I went for a stretch goal of building the front end in React which is a new technology for me.
 
   * Expected Functionality:
-    - Allow input of new Note Item, max of 250 characters, with dropdown menu of tags: work, personal, and hobby.
-    - View all previously created Note Items.
+    - Allow input of new note, max of 250 characters, with dropdown menu of tags: work, personal, and hobby.
+    - View all previously created notes.
     - Ability to filter items by tag and by date.
 
 ### Cloning
@@ -44,7 +44,11 @@ This app is tested with `Enzyme` and `Jest`.
 
   **Example Response**
 ```json
-[
+{
+  "******* Headers *******"
+  "Content-Type": "application/json"
+}
+[  "******* Body *******"
   {
       "created": "2018-12-24T20:37:24.415Z",
       "todoDescription": "Get new star map",
@@ -73,11 +77,11 @@ This app is tested with `Enzyme` and `Jest`.
   **Expected Request Format**
 ```json
 {
-  /* Headers */
+  "******* Headers *******"
   "Content-Type": "application/json"
 }
 {
-  /* Body */
+  "******* Body *******"
   "todoDescription": "New note info goes here",
   "tag": "work",
   "created": "Tues, Jan 5th"
@@ -91,40 +95,35 @@ This app is tested with `Enzyme` and `Jest`.
 
 
 
+  ### Live App Usage
+
+  ![](public/images/AppUsage.gif)
+
 
 **Known Issues**
 
+- When a filter has been selected and the user is only seeing the notes associated with that tag, and then they add a new note with that same tag, the note does not pop up until the user clicks one (any) of the filter buttons again.
 
+- Filter by Date functionality is in progress.
 
-The lambda code in this repo was copied and pasted from my AWS Lambda Console and is for display purposes only.
+- Needs more testing.
 
-### Live App Usage
+- Needs more styling.
 
-![](link)
+*The lambda code in this repo was copied and pasted from my AWS Lambda Console and is for display purposes only.*
+
 
 
 ### AWS Services Used
 
-Since I cannot provide you access to my AWS account, I have included screenshots showing the DynamoDB Console, API Gateway Console, and Lambda pages I used.
+Screenshots of the AWS Lambda code I used.
 
 
-**DynamoDB Console**
+**Lambda Code**
 
-<img src='assets/DynamoDB Console.png'>
+<img src='public/images/getAllTodos.png'>
 
-
-**API Gateway Console**
-
-<img src='assets/API Gateway Console.png'>
-
-
-**Lambda Console**
-
-<img src='assets/LambdaConsole.png'>
-
-<img src='assets/getLambda.png'>
-
-<img src='assets/addLambda.png'>
+<img src='public/images/postTodos.png'>
 
 
 

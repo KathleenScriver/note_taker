@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './NoteList.css';
 import Note from './Note'
 import AddNote from './AddNote'
+import TagFilter from './TagFilter'
 
 export default class NoteList extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ export default class NoteList extends Component {
     this.state = {
       isLoading: false,
       notes: [],
+      filteredNotes: [],
       error: false
     };
   }
@@ -29,7 +31,7 @@ export default class NoteList extends Component {
   }
 
   renderNotes = () => {
-    const { notes } = this.state;
+    const notes = (this.state.filteredNotes.length ? this.state.filteredNotes : this.state.notes);
     if (this.state.isLoading) {
       return (<p>"Loading..."</p>)
     }
@@ -45,6 +47,18 @@ export default class NoteList extends Component {
         />
       ))
     )
+  }
+
+  filterNotes = (filterBy) => {
+    const { notes } = this.state
+    if (filterBy === "all") {
+      this.setState({ filteredNotes: [] })
+    } else {
+      const filteredNotes = notes.filter(note => (
+        note.tag === filterBy
+      ));
+      this.setState({ filteredNotes: [...filteredNotes] })
+    }
   }
 
   addNote =  async (newNoteText, newNoteTag) => {
@@ -88,8 +102,10 @@ export default class NoteList extends Component {
 
         <AddNote addNote={this.addNote}/>
 
+
         <div className='note-list'>
           <h1>Notes</h1>
+          <TagFilter filterNotes={this.filterNotes}/>
           {this.renderNotes()}
         </div>
       </div>

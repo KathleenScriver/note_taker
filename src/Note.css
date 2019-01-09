@@ -6,4 +6,18 @@
   margin: 20px;
   padding: 20px;
   text-transform: capitalize;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text {
+  flex-basis: 50%;
+}
+
+.remove {
+  background-color: #9AD4D6;
+  border-color: #538083;
+  border-width: 1px;
+  border-radius: 10px;
 }

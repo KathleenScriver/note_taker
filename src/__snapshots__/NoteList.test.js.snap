@@ -55,6 +55,38 @@ exports[`NoteList renders and matches our snapshot 1`] = `
     <h1>
       Notes
     </h1>
+    <div
+      className="tag-filter"
+    >
+      <button
+        className="work"
+        onClick={[Function]}
+        value="work"
+      >
+        Work
+      </button>
+      <button
+        className="hobby"
+        onClick={[Function]}
+        value="hobby"
+      >
+        Hobby
+      </button>
+      <button
+        className="personal"
+        onClick={[Function]}
+        value="personal"
+      >
+        Personal
+      </button>
+      <button
+        className="all"
+        onClick={[Function]}
+        value="all"
+      >
+        All
+      </button>
+    </div>
     <p>
       "Loading..."
     </p>

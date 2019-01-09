@@ -1,0 +1,17 @@
+.tag-filter {
+  display: flex;
+  justify-content: center;
+}
+
+.tag-filter button {
+  margin: 10px;
+  background-color: #9AD4D6;
+  border-color: #538083;
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 5px;
+  color: white;
+  width: 70px;
+  text-align: center;
+  font-size: 14px;
+}
