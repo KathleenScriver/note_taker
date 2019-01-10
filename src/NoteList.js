@@ -53,11 +53,21 @@ export default class NoteList extends Component {
     const { notes } = this.state
     if (filterBy === "all") {
       this.setState({ filteredNotes: [] })
+    } else if (filterBy === "oldest") {
+      let filteredNotes = notes.sort((a, b) => {
+        return (new Date(a.created) - new Date(b.created))
+      })
+      this.setState({ filteredNotes: [...filteredNotes] });
+    } else if (filterBy === "recent") {
+      let filteredNotes = notes.sort((a, b) => {
+        return (new Date(b.created) - new Date(a.created))
+      })
+      this.setState({ filteredNotes: [...filteredNotes] });
     } else {
-      const filteredNotes = notes.filter(note => (
+      let filteredNotes = notes.filter(note => (
         note.tag === filterBy
       ));
-      this.setState({ filteredNotes: [...filteredNotes] })
+      this.setState({ filteredNotes: [...filteredNotes] });
     }
   }
 
