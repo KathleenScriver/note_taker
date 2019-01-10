@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/note_taker/static/js/runtime~main.8bf2a2d2.js"
   },
   {
-    "revision": "b2f7849442ff9579f2ab",
-    "url": "/note_taker/static/js/main.b2f78494.chunk.js"
+    "revision": "7e5938436885ddb6f2a0",
+    "url": "/note_taker/static/js/main.7e593843.chunk.js"
   },
   {
     "revision": "1e3e20059fea7e571015",
     "url": "/note_taker/static/js/1.1e3e2005.chunk.js"
   },
   {
-    "revision": "b2f7849442ff9579f2ab",
-    "url": "/note_taker/static/css/main.c5e0cffe.chunk.css"
+    "revision": "7e5938436885ddb6f2a0",
+    "url": "/note_taker/static/css/main.2d58f7bf.chunk.css"
   },
   {
-    "revision": "a3a87ea7c8ee266e3b4a50fc66e753eb",
+    "revision": "5e348045d658eb3f81607f7b77e83d53",
     "url": "/note_taker/index.html"
   }
 ];
