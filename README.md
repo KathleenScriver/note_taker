@@ -1,4 +1,4 @@
-#NoteTaker
+# NoteTaker
 
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/KathleenYruegas/note_taker.svg?columns=all)](https://waffle.io/KathleenYruegas/note_taker)
 
