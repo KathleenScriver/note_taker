@@ -15,6 +15,8 @@ export default class TagFilter extends Component {
         <button onClick={this.filterNotes} value="hobby" className="hobby">Hobby</button>
         <button onClick={this.filterNotes} value="personal" className="personal">Personal</button>
         <button onClick={this.filterNotes} value="all" className="all">All</button>
+        <button onClick={this.filterNotes} value="recent" className="recent">Recent</button>
+        <button onClick={this.filterNotes} value="oldest" className="oldest">Oldest</button>
       </div>
     )
   }
