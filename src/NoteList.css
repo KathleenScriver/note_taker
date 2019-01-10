@@ -1,6 +1,8 @@
 .note-list {
   margin: 20px;
-  padding: 20px;
+  padding: 5px;
   border: 2px solid #00D8FF;
   background: #DDEEFF;
+  border-radius: 20px;
+  box-shadow: 5px 10px 10px #888888;
 }

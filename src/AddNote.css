@@ -1,7 +1,49 @@
 .add-note {
   margin: 20px;
-  padding: 20px;
+  padding: 5px;
   border: 2px solid #00FFD8;
   background: #DDFFEE;
   text-align: center;
+  border-radius: 20px;
+  box-shadow: 5px 10px 10px #888888;
+  padding-bottom: 50px;
+}
+
+.input-area {
+  align-items: center;
+}
+
+.input-area textarea {
+  margin-top: 1px;
+  margin-bottom: 5px;
+  height: 120px;
+  width: 220px;
+  border-radius: 5px;
+}
+
+.button-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row || nowrap;
+}
+
+.tag-list {
+  height: 30px;
+  width: 100px;
+  font-size: 15px;
+}
+
+.add-button {
+  margin: 10px;
+  margin-top: 20px;
+  background-color: #769FB6;
+  border-color: #538083;
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 5px;
+  color: white;
+  width: 100px;
+  text-align: center;
+  font-size: 14px;
 }

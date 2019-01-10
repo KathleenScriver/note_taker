@@ -28,23 +28,27 @@ export default class AddNote extends Component {
     return (
       <div className="add-note">
         <h1>Add a Note</h1>
-        <textarea
-          type='text'
-          max='250'
-          onChange={this.updateNoteText}
-          value={this.state.noteText}
-        />
-        <select
-          className='tag-list'
-          onChange={this.updateNoteTag}
-          required
-        >
-          <option value='' default>Select Tag</option>
-          <option value='hobby'>Hobby</option>
-          <option value='work'>Work</option>
-          <option value='personal'>Personal</option>
-        </select>
-        <button onClick={this.addNote}>Add Note</button>
+        <div className='input-area'>
+          <textarea
+            type='text'
+            max='250'
+            onChange={this.updateNoteText}
+            value={this.state.noteText}
+          />
+        </div>
+        <div className='button-section'>
+          <select
+            className='tag-list'
+            onChange={this.updateNoteTag}
+            required
+          >
+            <option value='' default>Select Tag</option>
+            <option value='hobby'>Hobby</option>
+            <option value='work'>Work</option>
+            <option value='personal'>Personal</option>
+          </select>
+        </div>
+        <button className='add-button' onClick={this.addNote}>Add</button>
       </div>
     )
   }
